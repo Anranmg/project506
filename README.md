@@ -1,10 +1,11 @@
 # Project506
 
-## Group 10 (Anran Meng, Yuxuan Hu and Ke Li)
+#### Group 10 (Anran Meng, Yuxuan Hu and Ke Li)
 
-# Topic: Divisive Hierachical Clustering
+## Topic: 
+Divisive Hierachical Clustering
 
-# Introduction to clustering analysis
+## Introduction to clustering analysis
 
 [The hierarchical analysis][https://en.wikipedia.org/wiki/Hierarchical_clustering#Divisive_clustering] 
 
@@ -20,16 +21,16 @@ $$
 ||a-b||_2 = \sqrt{\sum_i (a_i-b_i)^2}
 $$
 
-# Dataset used here 
+## Dataset used here 
 
-## Source:
+#### Source:
 [Black Friday, Kaggle Reference][https://www.kaggle.com/mehdidag/black-friday]
 
 The dataset here is a sample of the transactions made in a retail store. The store wants to know better the customer purchase behaviour against different products. 
 
 Dataset of 550 000 observations about the black Friday in a retail store, it contains different kinds of variables either numerical or categorical. 
 
-## Variables inside:
+#### Variables inside:
 User_ID: User ID <br />
 Product_ID: Product ID <br />
 Gender: Sex of User <br />
@@ -43,12 +44,12 @@ Product_Category_2: Product may belongs to other category also <br />
 Product_Category_3: Product may belongs to other category also <br />
 Purchase: Purchase amount in dollars <br />
 
-## Goal:
+#### Goal:
 By saying predict customer preference, we expect to find informative characteristics of each group after clustering.
 we plan to use a few of the attributes in the data only for segmentation and the remaining only to profile the clusters. <br />
 These profiling attributes (e.g. demographic and behavioral data) would help us better understand patterns of different customer groups. Meantime, we expect to check robustness of our hierarchical clustering models by comparing similarity between these profiling variables.
 
-# Running divisive clustering analysis in STATA
+## Running divisive clustering analysis in STATA
 Similar to R and Python, we need to first import the dataset into STATA. We use the "import delimited" command. <br />
 **import delim....
 
@@ -75,7 +76,7 @@ for the first 10 consumers in the dataset. <br />
 
 We  <br />
 
-# Running divisive clustering analysis in Python
+## Running divisive clustering analysis in Python
 First, we need to clean and reshape the huge dataset, keeping informative columns ('User_ID', 'Product_Category_1' and 'Purchase' in our case) and converting to a wide readable table. Using pandas package in Python, we follow the similar ideas as using dyplr in R. First of all, calculating the individual purchasing percentage under each category over years. Then, reshaping the long table to a wide form with customers' ID as the row names, and the categorical index of products as the column names. <br />
 
 Since there is no built-in Python package or method for divisive clustering. We write several functions based on the principle of algorithm. The first step is to construct a dissimilarity matrix, which is symmerical. <br /> 
@@ -86,7 +87,7 @@ For the last attempt, we implement the ward linkage which performs agglomerative
 
 **insert code "div_draft.py"
 
-# Running divisive clustering analysis in R
+## Running divisive clustering analysis in R
 
 First, we clean and reshape the data. Due to repeat data infomation in product category 2 and 3, we just choose "product_category_1" for clustering analysis. By manipulating data, we get a new dataset with user_id and 18 category1 ratios for each user.<br />
 
@@ -99,7 +100,7 @@ Just for test, we choose k=4 to cluster data into 4 groups, and check the number
 
 Last, select cluster number to generate barplot of category ratio in each cluster can help us to compare customer preference in each cluster.  <br />
 
-# reference 
+## reference 
 Finding groups in data: An introduction to cluster analysis
 
 ## reason for unsimilar results 
