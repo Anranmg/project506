@@ -31,22 +31,23 @@ The dataset here is a sample of the transactions made in a retail store. The sto
 Dataset of 550 000 observations about the black Friday in a retail store, it contains different kinds of variables either numerical or categorical. 
 
 ## Variables inside:
-User_ID: User ID
-Product_ID: Product ID
-Gender: Sex of User
-Age: Age in bins
-Occupation: Occupation
-City_Category: Category of the City: A,B,C
-Stay_In_Current_City_Years: Number of years stay in current city
-Marital_Status: Marital Status
-Product_Category_1: Product Category
-Product_Category_2: Product may belongs to other category also
-Product_Category_3: Product may belongs to other category also
-Purchase: Purchase amount in dollars
+User_ID: User ID <br />
+Product_ID: Product ID <br />
+Gender: Sex of User <br />
+Age: Age in bins <br />
+Occupation: Occupation <br />
+City_Category: Category of the City: A,B,C <br />
+Stay_In_Current_City_Years: Number of years stay in current city <br />
+Marital_Status: Marital Status <br />
+Product_Category_1: Product Category <br />
+Product_Category_2: Product may belongs to other category also <br />
+Product_Category_3: Product may belongs to other category also <br />
+Purchase: Purchase amount in dollars <br />
 
 ## Goal:
 By saying predict customer preference, we expect to find informative characteristics of each group after clustering.
-we plan to use a few of the attributes in the data only for segmentation and the remaining only to profile the clusters. These profiling attributes (e.g. demographic and behavioral data) would help us better understand patterns of different customer groups. Meantime, we expect to check robustness of our hierarchical clustering models by comparing similarity between these profiling variables.
+we plan to use a few of the attributes in the data only for segmentation and the remaining only to profile the clusters. <br />
+These profiling attributes (e.g. demographic and behavioral data) would help us better understand patterns of different customer groups. Meantime, we expect to check robustness of our hierarchical clustering models by comparing similarity between these profiling variables.
 
 # Running divisive clustering analysis in STATA
 Similar to R and Python, we need to first import the dataset into STATA. We use the "import delimited" command. <br />
@@ -86,6 +87,19 @@ For the last attempt, we implement the ward linkage which performs agglomerative
 
 **insert code "div_draft.py"
 
+# Running divisive clustering analysis in R
+
+First, we clean and reshape the data. Due to repeat data infomation in product category 2 and 3, we just choose "product_category_1" for clustering analysis. By manipulating data, we get a new dataset with user_id and 18 category1 ratios for each user.<br />
+
+Then, we Standardize the data, with default settings, will calculate the mean and standard deviation of the entire vector, then "scale" each element by those values by subtracting the mean and dividing by the sd. <br />
+
+Our cluster method is divisive Hierachical Clustering, so using diana to cluster data, and generate the dendrogram of diana.
+(use euclidean method to calculate distance). <br />
+
+Just for test, we choose k=4 to cluster data into 4 groups, and check the number in each cluster. <br />
+
+Last, select cluster number to generate barplot of category ratio in each cluster can help us to compare customer preference in each cluster.  <br />
 
 # reference 
 Finding groups in data: An introduction to cluster analysis
+
