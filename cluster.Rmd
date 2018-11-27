@@ -14,7 +14,8 @@ library(ggplot2)
 library(tidyr)
 library(dplyr)
 # We need to load data into R by using read.csv since it’s in csv format.
-data=read.csv("~/Desktop/BlackFriday.csv",header=TRUE, sep=',')
+#setwd("./Desktop")
+data=read.csv("./BlackFriday.csv",header=TRUE, sep=',')
 
 ```
 
@@ -32,9 +33,9 @@ data=data %>%
   replace(.,is.na(.),0)%>%
   select(-total)
 
-# Since the dataset is so large, it will takes more than 10 mins to run, we choose first 100 data to just show 
-# one result.
-data = head(data, n = 100)
+## Since the dataset is so large, it will takes more than 10 mins to run, we choose first 100 data to just show 
+## one result.
+   data = head(data, n = 100)
 ```
 
 
