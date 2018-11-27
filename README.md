@@ -11,7 +11,7 @@ The hierarchical analysis
 # dataet used here 
 (source, variables inside, data structure, goal)
 
-# running divisive clytering analysis in STATA
+# running divisive clustering analysis in STATA
 Similar to R and Python, we need to first import the dataset into STATA. We use the "import delimited" command. <br />
 **import delim....
 
