@@ -33,6 +33,16 @@ num_clusters = 0
 
 from skbio.core.distance import DistanceMatrix
 dm = DistanceMatrix(df_perc_dismat_test)
+##################################Package not available###############################
+
+###################################Another attempt##################################
+
+#dismat = df_perc_dismat_test
+#
+#for column in df_perc_dismat_test:
+#    dismat.append(df_perc_dismat_test[column])
+
+###################################Another attempt##################################
 
 #dismat = (pd.read_csv("project_v1.csv")
 #    .drop(dismat.columns[0:27], axis=1)
@@ -40,7 +50,10 @@ dm = DistanceMatrix(df_perc_dismat_test)
 #all_elements = df_perc_dismat.index
 #dissimilarity_matrix = pd.DataFrame(dismat,index=all_elements, columns=all_elements)
 #
-#
+
+###################################algorithm functions################################
+
+
 #def avg_dissim_within_group_element(ele, element_list):
 #    max_diameter = -np.inf
 #    sum_dissm = 0
@@ -125,11 +138,13 @@ dm = DistanceMatrix(df_perc_dismat_test)
 #print(level, current_clusters)
 
 
-############################################################################3
-#
-#import scipy.cluster.hierarchy as shc
-#import matplotlib.pyplot as plt  
-#
-#plt.figure(figsize=(10, 7))  
-#plt.title("Customer Dendograms")  
-#dend = shc.dendrogram(shc.linkage(df_perc_dismat, method='ward'))  
+###################################### use another method ######################################
+################################### Ward ##################################
+
+
+import scipy.cluster.hierarchy as shc
+import matplotlib.pyplot as plt  
+
+plt.figure(figsize=(10, 7))  
+plt.title("Customer Dendograms")  
+dend = shc.dendrogram(shc.linkage(df_perc_dismat, method='ward'))  
