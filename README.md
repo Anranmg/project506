@@ -1,12 +1,11 @@
 # Project506
- ## Introduction and overview  3-5 paragraphs
- what your topic is; information; sources; <br />
- description of the data used <br />
- scope, language <br />
- reason for unsimilar results <br />
- ## Topic:
- (Divisive) Hierachical Clustering
+
+## Group 10 (Anran Meng, Yuxuan Hu and Ke Li)
+
+# Topic: Divisive Hierachical Clustering
+
 # Introduction to clustering analysis
+
 [The hierarchical analysis][https://en.wikipedia.org/wiki/Hierarchical_clustering#Divisive_clustering] 
 
 Divisive hierachical algorithms are built top-down: starting with the whole sample in a unique
@@ -22,7 +21,7 @@ $$
 $$
 
 # Dataset used here 
-(source, variables inside, data structure, goal)
+
 ## Source:
 [Black Friday, Kaggle Reference][https://www.kaggle.com/mehdidag/black-friday]
 
@@ -103,3 +102,6 @@ Last, select cluster number to generate barplot of category ratio in each cluste
 # reference 
 Finding groups in data: An introduction to cluster analysis
 
+## reason for unsimilar results 
+
+<br />
