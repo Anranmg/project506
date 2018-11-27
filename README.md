@@ -8,6 +8,7 @@
  (Divisive) Hierachical Clustering
 # Introduction to clustering analysis
 [The hierarchical analysis][https://en.wikipedia.org/wiki/Hierarchical_clustering#Divisive_clustering] 
+
 Divisive hierachical algorithms are built top-down: starting with the whole sample in a unique
 cluster they split this cluster into two subclusters which are, in turn, divided into subclusters
 and so on. At each step the two new clusters make up a so-called bipartition of the former. It
