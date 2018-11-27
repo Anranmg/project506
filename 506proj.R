@@ -36,7 +36,7 @@ h2=diana(head(data1,10000), stand = TRUE)
 #plot
 plot(h2)
 #choose k=4,cluster
-cluster_id<- cutree(as.hclust(h2), k = 4)
+cluster_id = cutree(as.hclust(h2), k = 4)
 
 #check the number of each cluster
 table(cluster_id)
@@ -56,8 +56,8 @@ data_all=sqldf('select a.*,b.cluster_id from data as a left join tmp as b on a.U
 Product_Category_1_count=sqldf('select cluster_id,Product_Category_1,count(*) as count 
                                from data_all group by cluster_id,Product_Category_1 ')
 
-Product_Category_1_count$cluster_id <- factor(Product_Category_1_count$cluster_id)
-Product_Category_1_count$Product_Category_1 <- factor(Product_Category_1_count$Product_Category_1)
+Product_Category_1_count$cluster_id = factor(Product_Category_1_count$cluster_id)
+Product_Category_1_count$Product_Category_1 = factor(Product_Category_1_count$Product_Category_1)
 
 
 library(ggplot2)
