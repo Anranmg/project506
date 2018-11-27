@@ -82,6 +82,9 @@ Since there is no built-in Python package or method for divisive clustering. We 
 
 However, so far, the dissimilarity matrix is 5891 by 5891, which is still too big for clustering. We also noticed extreme data points have huge effect to the outcome. More adjustments (e.g. introducing criterions) will be implemented in the furture steps. <br />
 
+For the last attempt, we implement the ward linkage which performs agglomerative hierarchical clustering as a comparison of what we got from R and Stata. Obviously, the 'Customer Dendograms' indicate having four clusters is not enough for analysis. More modifications will be needed. <br />
+
+**insert code "div_draft.py"
 
 
 # reference 
