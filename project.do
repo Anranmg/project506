@@ -70,70 +70,73 @@ forval i = 1/`n' {
 						*/(all_purchase16[`i'] - all_purchase16[`j'])^2+/*
 						*/(all_purchase17[`i'] - all_purchase17[`j'])^2+/*
 						*/(all_purchase18[`i'] - all_purchase18[`j'])^2
-                        replace dist_`j'=`d' in `i'
+                        replace dist_`j'=sqrt(`d') in `i'  // change added
                         }
                 }
         }
+//visualiza pairwise distance
+list dist_1-dist_5 in 1/5
+save projectv1, replace
+
+keep dist* user_id
+reshape long dist_,i(user_id) j(j)
+rename dist_ distance
+hist distance, freq title("histogram of pairwise distances") 
+graph export project1.png, replace
 		
-//divisve hierarchical clustering		
+		
+//divisve hierarchical clustering
+//considered computation cost, only select first 100 observations
+drop dist_101-dist_5891
+drop if _n>100		
 //calculate average distance to find splinter
 gen group=1
 diana 1 2  // split group 1 into 2 clusters
 diana 1 3
-diana 2 4
-
-/* diana command
-local n=_N
-forval i=1/`n'{
-   forval j=1/`n'{
-    if  (`i' == `j') { 
-	qui su dist_`j' if group==1
-	replace mn=`r(sum)'/(`r(N)'-2) in `i'
-	 }
-   }
-}
-//initiare the splinter group
-qui su mn
-replace group=2 if mn>=`r(max)'
-
-//average disimilarity to remaining objects
-local n=_N
-forval i=1/`n'{
-   forval j=1/`n'{
-    if  (`i' == `j') { 
-	qui su dist_`j' if group!=2
-	replace mn=`r(sum)'/(`r(N)'-1) in `i'
-	 }
-   }
-}
-
-//average disimilarity to splinter
-local n=_N
-forval i=1/`n'{
-   forval j=1/`n'{
-    if  (`i' == `j') { 
-	qui su dist_`j' if group==2
-	replace mn_2=`r(sum)'/(`r(N)') in `i'
-	 }
-   }
-}
-//compare with two distance and remove the next object
-replace diff=mn-mn_2
-qui su diff
-local d=`r(max)'
-replace group=2 if (diff>=`d') & (`d'>0)
-
-//repeat until all diff<0
-max(diff)>0
-//loop command for subcluster; no. group 2*i
-*/
+diana 1 4
 
 //cluter data with 4 clusters
-
-
-
+list group in 1/10
+export delimited using "./project_result.csv", replace
 
 /*****report clustering result *****/
 //average value for each group (table & figure)
-by group: collapse (mean) all_purchase*
+drop dist_*
+save project_result,replace
+//population mean
+//add one obs
+local new = _N + 1
+set obs `new'
+//population average
+foreach var of varlist all_purchase1-all_purchase18 marital_status occupation{
+   qui su `var',mean
+   replace `var'=`r(mean)' in 101
+}
+replace group=0 in 101
+//table for 4 clusters
+collapse (mean) all_purchase* marital_status occupation, by(group)
+
+drop marital_status occupation
+reshape long all_purchase, i(group) j(type)
 //profile with demographic features with graph 
+tw (connected all_purchase type if group==0) || (connected all_purchase type if group==1) /*
+*/|| (connected all_purchase type if group==2) || (connected all_purchase type if group==3) /*
+*/|| (connected all_purchase type if group==4), legend(lab(1 "population") lab(2 "group 1") lab(3 "group 2") lab(4 "group 3") lab(5 "group 4")) title("proportion of purchase within 4 clusters")
+graph export project2.png, replace
+
+
+use project_result,clear
+//change string to numeric
+rename gender str_gender
+gen gender=1 if str_gender=="M"
+replace gender=0 if gender==.
+//profile with demographic features with graph 
+graph bar marital_status gender, over(group) title("average marital status and gender within segement")/*
+*/legend(lab(1 "marital status") lab(2 "gender")) note("gender: 0 female, 1 male; marital: 0 unmarried, 1 mariied")
+
+bys group occupation: gen prop=_N
+bys group: gen num=_N
+replace prop= prop/num
+tw (connected prop occupation if group==1) || (connected prop occupation if group==2) || (connected prop occupation if group==3) /*
+*/|| (connected prop occupation if group==4), legend(lab(1 "group 1") lab(2 "group 2") lab(3 "group 3") lab(4 "group 4")) title("proportion of occupation within 4 clusters")
+graph export project3.png, replace
