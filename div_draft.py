@@ -31,8 +31,8 @@ df_perc_dismat_test = df_perc_dismat.head(100)
 
 num_clusters = 0
 
-from skbio.core.distance import DistanceMatrix
-dm = DistanceMatrix(df_perc_dismat_test)
+#from skbio.core.distance import DistanceMatrix
+#dm = DistanceMatrix(df_perc_dismat_test)
 ##################################Package not available###############################
 
 ###################################Another attempt##################################
