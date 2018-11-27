@@ -75,6 +75,12 @@ for the first 10 consumers in the dataset. <br />
 
 We  <br />
 
+# Running divisive clustering analysis in Python
+First, we need to clean and reshape the huge dataset, keeping informative columns ('User_ID', 'Product_Category_1' and 'Purchase' in our case) and converting to a wide readable table. Using pandas package in Python, we follow the similar ideas as using dyplr in R. First of all, calculating the individual purchasing percentage under each category over years. Then, reshaping the long table to a wide form with customers' ID as the row names, and the categorical index of products as the column names. 
+
+Since there is no built-in Python package or method for divisive clustering. We write several functions based on the principle of algorithm. The first step is to construct a dissimilarity matrix, which is symmerical. 
+
+
 
 # reference 
 Finding groups in data: An introduction to cluster analysis
