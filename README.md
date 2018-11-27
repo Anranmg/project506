@@ -74,8 +74,12 @@ though it has reduced the computation cost quite a lot, it still takes much time
 for the first 10 consumers in the dataset. <br />
 **list group in 1/10
 
-We also plot a line chart to compare difference between groups. Combined demographic features, we use the following plots to help detect divergence among these four clusters.
+ ![figure0](https://raw.githubusercontent.com/Anranmg/project506/master/project1.png){width=50%}
+ 
+We also plot a line chart to compare difference between groups. 
  ![figure1](https://raw.githubusercontent.com/Anranmg/project506/master/project2.png){width=50%}
+Combined demographic features, we use the following plots to help detect divergence among these four clusters.
+ ![figure2](https://raw.githubusercontent.com/Anranmg/project506/master/project3.png){width=50%}
  
  
 ## Running divisive clustering analysis in Python
@@ -88,6 +92,8 @@ However, so far, the dissimilarity matrix is 5891 by 5891, which is still too bi
 For the last attempt, we implement the ward linkage which performs agglomerative hierarchical clustering as a comparison of what we got from R and Stata. Obviously, the 'Customer Dendograms' indicate having four clusters is not enough for analysis. More modifications will be needed. <br />
 
 **insert code "div_draft.py"
+
+ ![figure3](https://raw.githubusercontent.com/Anranmg/project506/master/ward.png){width=50%}
 
 ## Running divisive clustering analysis in R
 
