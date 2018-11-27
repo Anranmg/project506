@@ -1,4 +1,4 @@
-program drop diana
+//program drop diana
 program diana
     //import parameter
 	gen mn=0
@@ -17,6 +17,7 @@ program diana
    //initiare the splinter group
    qui su mn if group==`1'
    replace group=`2' if mn==float(`r(max)')
+   
 local d=1
 while (`d'>0){
    //average disimilarity to remaining objects
@@ -43,11 +44,12 @@ forval i=1/`n'{
    replace diff=mn-mn_2
    qui su diff if group==`1'
    local d=`r(max)'
-   replace group=`2' if (diff>=`d') & (`d'>0)
+   replace group=`2' if (diff==float(`d')) & (`d'>0)
 }     
   //drop intermediate variable
  drop mn mn_2 diff
 end
+
 /*
 alogrithm explanation: 
 measure: euclidean distance
