@@ -6,7 +6,8 @@ library(tidyr)
 library(dplyr)
 
 # We need to load data into R by using read.csv since it’s in csv format.
-data=read.csv("~/Desktop/BlackFriday.csv",header=TRUE, sep=',')
+#setwd("./Desktop")
+data=read.csv("./BlackFriday.csv",header=TRUE, sep=',')
 
 # Because product category2 and category3 are products belong to other catagory, it recalculate same product, we drop these two category.
 # By manipulating data, we get a new dataset with user_id and 18 category1 ratios for each user.
