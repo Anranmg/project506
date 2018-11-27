@@ -104,5 +104,12 @@ Last, select cluster number to generate barplot of category ratio in each cluste
 Finding groups in data: An introduction to cluster analysis
 
 ## reason for unsimilar results 
+### Consideration and To-do list
 
+* We found our data is too big to handle (cleaned and reshaped version is a data frame of size 5891 by 81). Calculations are time-consuming <br />
+
+* There are no built-in package or method in Python and Stata that can sufficiently support the divisive algorithm.
+Writing functions based on the theory itself is hard to debug and beyond our current understanding. <br />
+
+* For the final project, we are thinking about dimensionality reduction modeling, plus K-means clustering.
 <br />
