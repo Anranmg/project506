@@ -95,7 +95,7 @@ list
 drop marital_status sex stay_years nage
 reshape long all_purchase, i(group) j(type)
 tw (connected all_purchase type if group==0) || (connected all_purchase type if group==1) /*
-*/|| (connected all_purchase type if group==2) , legend(lab(1 "population") lab(2 "group 1") lab(3 "group 2")) title("proportion of purchase within 4 clusters")
+*/|| (connected all_purchase type if group==2) , legend(lab(1 "population") lab(2 "group 1") lab(3 "group 2")) title("proportion of purchase within 2 clusters")
 graph export project2.png, replace
 
 
