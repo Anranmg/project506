@@ -35,6 +35,7 @@ encode stay_in_current_city_years, gen(stay_years)
 drop gender age city_category stay_in_current_city_years
 
 
+
 /*****clustering analysis*****/
 //initial: split sample into 2 parts: training(80%) 4713 obs, testing(20%) 1178 obs
 //final: no longer split the dataset
@@ -58,10 +59,8 @@ cluster stop ward
 cluster generate group=group(2)
 table group
 
-
 //list clutering result for first ten obs
 list user_id group in 1/10
-
 
 
 /******assess clustering ******/
@@ -69,6 +68,8 @@ list user_id group in 1/10
 matrix dissimilarity di = all_purchase*, correlation
 //sil
 silhouette group, dist(di) id(user_id) lwidth(1 1 1) title("silhouette coefficient")
+graph export project1.png, replace
+
 
 
 /*******report clustering result *********/
@@ -119,6 +120,9 @@ graph export project4.png, replace
 //age; city; stay_years
 gen frequency = 1
 graph bar (sum) frequency, over(group) over(nage) asyvars title("Distribution of Age between Clusters") ytitle("Counts")
+graph export project5.png, replace
 graph bar (sum) frequency, over(group) over(city) asyvars title("Distribution of City between Clusters") ytitle("Counts")
+graph export project6.png, replace
 graph bar (sum) frequency, over(group) over(stay_years) asyvars title("Distribution of Living Years between Clusters") ytitle("Counts")
+graph export project7.png, replace
 
