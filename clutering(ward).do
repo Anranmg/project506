@@ -49,7 +49,7 @@ cluster wardslinkage all_purchase*, measure(correlation) name(ward)
 cluster list ward
 //draw dendrogram
 cluster dendrogram ward, xlabel(, angle(90) labsize(*.75)) cutnumber(20) title(Ward-linkage clustering)
-graph export project0.png, replace
+graph export project1.png, replace
 
 //Calinski–Harabasz;  The highest Calinski–Harabasz pseudo-´ F value 
 //how many cluster to choose
@@ -65,10 +65,10 @@ list user_id group in 1/10
 
 /******assess clustering ******/
 //visualiza pairwise distance
+set matsize 6000
 matrix dissimilarity di = all_purchase*, correlation
 //sil
 silhouette group, dist(di) id(user_id) lwidth(1 1 1) title("silhouette coefficient")
-graph export project1.png, replace
 
 
 
@@ -125,4 +125,3 @@ graph bar (sum) frequency, over(group) over(city) asyvars title("Distribution of
 graph export project6.png, replace
 graph bar (sum) frequency, over(group) over(stay_years) asyvars title("Distribution of Living Years between Clusters") ytitle("Counts")
 graph export project7.png, replace
-
