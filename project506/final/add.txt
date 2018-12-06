@@ -1,9 +1,0 @@
-Calinski and Harabasz index
-
-ref:Calinski and Harabasz (1974), “A dendrite method for cluster analysisIdeally we’d like our clustering assignments C to simultaneously have a small W and a large B
- 
-This is the idea behind the CH index.3 For clustering assignments coming from K clusters, we record CH score:
-$CH(K)=\frac{B(K)/(K-1)}{W(K)/(n-K)}$
-where 
-W=within-cluster variation ,B=Between-cluster variation
-To choose K, just pick some maximum number of clusters to be considered Kmax (e.g., K = 20), and choose the value of K with the largest score CH(K).
