@@ -92,7 +92,7 @@ library(ggplot2)
 library(tidyr)
 library(dplyr)
 library(data.table)
-source('./clustering.R')
+source('./aggcluster.r')
 ```
 
 In our later analysis, we use purchase portion in product category as segmentation attributes. After some transformation, the simple summary statistics of our dataset is shown as following:
