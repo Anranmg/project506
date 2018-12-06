@@ -16,7 +16,7 @@ import seaborn as sns
 #cwd = os.getcwd()
 
 # Data Cleaning 
-bf = pd.read_csv("https://raw.githubusercontent.com/Anranmg/project506/master/BlackFriday.csv")
+bf = pd.read_csv("https://raw.githubusercontent.com/Anranmg/project506/master/project506/final/BlackFriday.csv")
 
 ########################################################################################################
 #Using percentage
