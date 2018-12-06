@@ -1,8 +1,8 @@
-*****data clearing *****/
+****data clearing *****/
 //install package
-net install silhouette
+ssc install silhouette
 //import dataset
-import delimited "https://raw.githubusercontent.com/Anranmg/project506/master/BlackFriday.csv"
+import delimited "https://raw.githubusercontent.com/Anranmg/project506/master/project506/final/BlackFriday.csv"
 
 //keep variables that later would be used
 drop product_category_2 product_category_3 product_id
@@ -25,7 +25,6 @@ forvalue i=1/18{
 }
 
 
-
 //summary statistics of final dataset
 /*
 no. of observations: 5891
@@ -41,7 +40,6 @@ encode age, gen(nage)
 encode city_category, gen(city)
 encode stay_in_current_city_years, gen(stay_years)
 drop gender age city_category stay_in_current_city_years
-
 
 
 /*****clustering analysis*****/
