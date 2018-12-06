@@ -11,7 +11,7 @@ library(cowplot)
 #setwd("~/Desktop/group_proj")
 
 # import data-----------------------------
-data=read.csv("https://raw.githubusercontent.com/Anranmg/project506/master/BlackFriday.csv",header=TRUE, sep=',')
+data=read.csv("https://raw.githubusercontent.com/Anranmg/project506/master/project506/final/BlackFriday.csv",header=TRUE, sep=',')
 
 # Because product category2 and category3 are products belong to other catagory, it recalculate same product, we drop these two category.
 # By manipulating data, we get a new dataset with user_id and 18 category1 ratios for each user.
