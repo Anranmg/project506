@@ -8,14 +8,14 @@ Group 10 (Yuxuan Hu,Ke Li and Anran Meng)
 
 
 
-## Agglomerative Hierarchical Clustering
+### Agglomerative Hierarchical Clustering
 As indicated by the term ***hierarchical***, the method seeks to build clusters based on hierarchy. Generally, there are two types of clustering strategies: ***Agglomerative*** and ***Divisive***. Here, we mainly focus on the agglomerative approach, which can be easily pictured as a ‘bottom-up’ algorithm.
 
 > Observations are treated separately as singleton clusters. Then, compute the Euclidean distance of each pair and successively merge the most similar clusters. Repeated the previous step until the final optimal clusters are formed. 
 
 
 
-## Ward Linkage Method
+### Ward Linkage Method
 There are four methods for combining clusters in ***agglomerative approach***. The one we choose to use is called ***Ward’s Method***. Unlike the others. Instead of measuring the distance directly, it analyzes the variance of clusters. Ward’s is said to be the most suitable method for quantitative variables. 
 
 [Ward's method](https://www.stat.cmu.edu/~cshalizi/350/lectures/08/lecture-08.pdf)
@@ -38,7 +38,7 @@ $$
 
 ![](https://github.com/Anranmg/project506/blob/master/project506/final/ward_def.png?raw=true)
 
-## Calinski and Harabasz Index
+### Calinski and Harabasz Index
 ***Calinski and Harabasz Index (CH Index)*** is often used for choosing the optimal number of clusters. 
 This criterion combines the within and between cluster variance to evalute the quality of segmentation. 
 The formula of ***CH Index*** defined as:
@@ -49,7 +49,7 @@ To obtain a small within-cluster variation and large within-cluster variation si
 limitation in CH index, for simplicity, we use CH Index as our main cluster stopping rule in this project.  
 
 
-## Dataset: [Black Friday](https://www.kaggle.com/mehdidag/black-friday/ 'Black Friday')
+### Dataset: [Black Friday](https://www.kaggle.com/mehdidag/black-friday/ 'Black Friday')
 
 In this tutorial, we choose the dataset on Black Friday with 6 variables. Dataset of 550 000 observations about the black Friday in a retail store, it contains different kinds of variables either numerical or categorical. It also contains missing values. 
 
@@ -104,7 +104,7 @@ We could find 'mountains and valleys' patterns in these two graphs, indicating b
 
 
 
-## R
+### R
 
 Load all the libraries we need for our analysis:
 ```{r}
@@ -116,7 +116,7 @@ library(dplyr)
 library(data.table)
 ```
 
-### Data Preparation
+#### Data Preparation
 
 We need to load data into R by using read.csv since it's in csv format.
 
@@ -138,7 +138,7 @@ m[1:5,1:5]
 ```
 
 
-### Clustering Analysis
+#### Clustering Analysis
 
 Using hierarchical clustering method, and get the dendrogram.\
 Method: Agglomeration method \
@@ -168,7 +168,7 @@ Clustering result in first 10 obs:
 knitr::kable(tmp[1:10,c(2,1)])
 ```
 
-### Analysis on Demographic Features
+#### Analysis on Demographic Features
 The plot shows average purchase proportion for each group and mean ourchase proportion for whole population. 
 
 * From plot of Purchase Proportion and plot of Occupation Proportion, we can see group 2 have more people with occupation 2 and 20 than group 1, while group 2 has obvious purchase preference on product category 5 and 8. Thus, we can infer that people with occupation 2 and 20 may prefer buying product category 5 and 8 
@@ -213,9 +213,9 @@ ggplot(tmp,aes(x=Age,fill=cluster_id))+
 
 
 
-## Stata
+### Stata
 
-### Data Prepartion
+#### Data Prepartion
 
 Similar to R and Python, we need to first import the dataset into STATA. We use the `import delimited` command. 
 
@@ -266,7 +266,7 @@ all_purch~18 |      5,891    .0016683    .0078574          0   .3889048
 ```
 
 
-### Clustering Analysis
+#### Clustering Analysis
 Since our goal is to group customer based on how similiar taste they have for shopping, we use euclidean distance measure as well as ward linkage method. `dendrogram` command allows us to visualize the 
 clustering results (shown in Figure1). 
 
@@ -355,7 +355,7 @@ could set tailored promotion strategy on different groups of people.
 ![](https://github.com/Anranmg/project506/blob/master/project506/final/project2.png?raw=true)
 
 
-### Analysis on Demographic Features
+#### Analysis on Demographic Features
 Combined demographic features, we use the following plots to help detect divergence among these two clusters: 
 
 * No big difference in age or residence structure among these two groups
@@ -371,7 +371,7 @@ Combined demographic features, we use the following plots to help detect diverge
 
 
 
-## Python
+### Python
 
 Import all the packages needed for hierarchical agglomerative clustering and Ward's linkage:
 
@@ -390,7 +390,7 @@ Download the online data directly and read as .csv file:
 bf = pd.read_csv("https://raw.githubusercontent.com/Anranmg/project506/master/project506/final/BlackFriday.csv")
 ```
 
-### Data Preparation
+#### Data Preparation
 
 
 Before start, we need to clean and reshape the data to a preferred format. For example, "product_category_2" and "product_category_3" need to be removed for not providing enough analyzable information. We calculated the individual total expenditures of 18 product categories and then standardized to a measure of percentage. Finally, we reshaped the table from long to wide for the convenience of calculation.
@@ -427,7 +427,7 @@ df_perc_dismat.iloc[0:10,0:5]
 
 
 
-### Clustering Analysis
+#### Clustering Analysis
 
 Plot the Customer Dendograms to visualize the results:
 
@@ -486,7 +486,7 @@ cluster.fit_predict(data)
 Apparently, customers within the clutser #1 highly prefer purchasing product of category #1 than the other 17 kinds. Product of category #5 and #8 are slightly more preferred by customers within cluster #0. Product category ranged from #9 to #18 are not as popular. 
 
 
-####Analysis on Demographic Features
+#### Analysis on Demographic Features
 
 
 For furthur research, we took a look at 'occupation' and 'age', two pre-excluded variables that actually can affect the purchasing preference. 
@@ -512,10 +512,10 @@ However, the result of 'occupation' is worth exploring. It shows the maximum pur
 ![](https://github.com/Anranmg/project506/blob/master/project506/final/py_occp.png?raw=true){width=60%}
 
 
-# Things to Consider
+## Things to Consider
 There is some potential risk in our analysis. For example, it might be to early to draw the conclusion on occupation as some other features have strong impact on consumer's shopping preference. Additionally, for time limited, we skip the robustness check step. It could hurt the validness of our clustering results. 
 
-# References
+## References
 1. [*A Dendrite Method for Cluster Analysis*](https://www.tandfonline.com/doi/pdf/10.1080/03610927408827101)
 
 2. [*Euclidean Distance*](https://en.wikipedia.org/wiki/Euclidean_distance)
@@ -526,5 +526,5 @@ There is some potential risk in our analysis. For example, it might be to early 
  
 5. [*Divisive clustering*](https://en.wikipedia.org/wiki/Hierarchical_clustering#Divisive_clustering)
 
-# Link to Github
+## Link to Github
 All the materials can be found in our [Github](https://github.com/Anranmg/project506/tree/master/final).
