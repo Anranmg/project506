@@ -1,19 +1,11 @@
 THIS IS THE FINAL VERSION FOR GROUP PROJECT.
 ---
-title: "Agglomertive Hierarchical Clustering using Ward Linkage"
-author: 'Group 10 (Yuxuan Hu,Ke Li and Anran Meng)'
-date: "`r Sys.Date()`"
-output: 
-  html_document:
-    toc: true # table of content true
-    df_print: paged
-    theme: lumen 
-    highlight: tango  # specifies the syntax highlighting style
----
 
-$$ 
-\newcommand{\R}{\mathbb{R}}
-$$
+
+# title: "Agglomertive Hierarchical Clustering using Ward Linkage"
+# author: 'Group 10 (Yuxuan Hu,Ke Li and Anran Meng)'
+
+
 
 # Agglomerative Hierarchical Clustering
 As indicated by the term ***hierarchical***, the method seeks to build clusters based on hierarchy. Generally, there are two types of clustering strategies: ***Agglomerative*** and ***Divisive***. Here, we mainly focus on the agglomerative approach, which can be easily pictured as a ‘bottom-up’ algorithm.
@@ -295,7 +287,7 @@ ward  (type: hierarchical,  method: wards,  dissimilarity: L2)
 
 cluster dendrogram ward, xlabel(, angle(90) labsize(*.75)) cutnumber(20) title(Ward-linkage clustering)
 ```
-![](https://github.com/Anranmg/project506/blob/master/project506/final/project1.png?raw=true){width=60%}
+![](https://github.com/Anranmg/project506/blob/master/project506/final/project1.png?raw=true)
 
 
 For simplicity, we use the Calinski Harabasz method to choose no. of clusters. Based on that, we finally use 2-segments solution and the segmentation result is shown as following. 
@@ -359,7 +351,7 @@ they are less likely attracted by products in ***category 5 and 8***.
 could set tailored promotion strategy on different groups of people. 
 
 
-![](https://github.com/Anranmg/project506/blob/master/project506/final/project2.png?raw=true){width=60%}
+![](https://github.com/Anranmg/project506/blob/master/project506/final/project2.png?raw=true)
 
 
 ### Analysis on Demographic Features
@@ -373,8 +365,8 @@ Combined demographic features, we use the following plots to help detect diverge
 
     + Similar conclusion can also applied to ***job 20***.
 
-![](https://github.com/Anranmg/project506/blob/master/project506/final/project4.png?raw=true){width=60%}
-![](https://github.com/Anranmg/project506/blob/master/project506/final/project5.png?raw=true){width=60%}
+![](https://github.com/Anranmg/project506/blob/master/project506/final/project4.png?raw=true)
+![](https://github.com/Anranmg/project506/blob/master/project506/final/project5.png?raw=true)
 
 
 
