@@ -533,4 +533,4 @@ There is some potential risk in our analysis. For example, it might be to early 
 5. [*Divisive clustering*](https://en.wikipedia.org/wiki/Hierarchical_clustering#Divisive_clustering)
 
 # Link to Github
-All the materials can be found in our [Github](https://github.com/Anranmg/project506/tree/master/final).
+All the materials can be found in our [Github](https://github.com/Anranmg/project506/tree/master/project506/final).
