@@ -2,12 +2,13 @@ THIS IS THE FINAL VERSION FOR GROUP PROJECT.
 ---
 
 
-# title: "Agglomertive Hierarchical Clustering using Ward Linkage"
-# author: 'Group 10 (Yuxuan Hu,Ke Li and Anran Meng)'
+# "Agglomertive Hierarchical Clustering using Ward Linkage"
+
+# 'Group 10 (Yuxuan Hu,Ke Li and Anran Meng)'
 
 
 
-# Agglomerative Hierarchical Clustering
+## Agglomerative Hierarchical Clustering
 As indicated by the term ***hierarchical***, the method seeks to build clusters based on hierarchy. Generally, there are two types of clustering strategies: ***Agglomerative*** and ***Divisive***. Here, we mainly focus on the agglomerative approach, which can be easily pictured as a ‘bottom-up’ algorithm.
 
 > Observations are treated separately as singleton clusters. Then, compute the Euclidean distance of each pair and successively merge the most similar clusters. Repeated the previous step until the final optimal clusters are formed. 
