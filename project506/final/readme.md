@@ -2,9 +2,9 @@ THIS IS THE FINAL VERSION FOR GROUP PROJECT.
 ---
 
 
-# "Agglomertive Hierarchical Clustering using Ward Linkage"
+# Agglomertive Hierarchical Clustering using Ward Linkage
 
-# 'Group 10 (Yuxuan Hu,Ke Li and Anran Meng)'
+## Group 10 (Yuxuan Hu,Ke Li and Anran Meng)
 
 
 
