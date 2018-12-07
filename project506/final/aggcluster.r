@@ -67,8 +67,8 @@ cowplot::plot_grid(plot1,plot2)
 # linkage: ward
 # And we use euclidean method to calculate distance.
 sol = hclust(dist(data1), method = "ward.D")
-plot(sol,cex = 0.3,hang = - 10, main = "Ward-linkage Cluster Dendrogram")
-rect.hclust(sol, k=20, border="red")
+#plot(sol,cex = 0.3,hang = - 10, main = "Ward-linkage Cluster Dendrogram")
+#rect.hclust(sol, k=20, border="red")
 
 # Select number of clusters based on ch index--------------------------
 #And we use clusters=2
