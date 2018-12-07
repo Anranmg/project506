@@ -12,18 +12,6 @@ output:
 
 $$ 
 \newcommand{\R}{\mathbb{R}}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\newcommand{\X}{\mathcal{X}}
-\newcommand{\D}{\mathcal{D}}
-\newcommand{\G}{\mathcal{G}}
-\newcommand{\L}{\mathcal{L}}
-\newcommand{\X}{\mathcal{X}}
-\newcommand{\Parents}{\mathrm{Parents}}
-\newcommand{\NonDesc}{\mathrm{NonDesc}}
-\newcommand{\I}{\mathcal{I}}
-\newcommand{\dsep}{\text{d-sep}}
-\newcommand{\Cat}{\mathrm{Categorical}}
-\newcommand{\Bin}{\mathrm{Binomial}}
 $$
 
 # Agglomerative Hierarchical Clustering
