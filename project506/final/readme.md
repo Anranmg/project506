@@ -1,5 +1,5 @@
-THIS IS THE FINAL VERSION FOR GROUP PROJECT.
----
+***THIS IS THE FINAL VERSION FOR GROUP PROJECT.***
+
 
 
 ## Agglomertive Hierarchical Clustering using Ward Linkage
