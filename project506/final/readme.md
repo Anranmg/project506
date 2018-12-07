@@ -2,9 +2,9 @@ THIS IS THE FINAL VERSION FOR GROUP PROJECT.
 ---
 
 
-# Agglomertive Hierarchical Clustering using Ward Linkage
+## Agglomertive Hierarchical Clustering using Ward Linkage
 
-## Group 10 (Yuxuan Hu,Ke Li and Anran Meng)
+Group 10 (Yuxuan Hu,Ke Li and Anran Meng)
 
 
 
@@ -102,7 +102,7 @@ cowplot::plot_grid(plot1,plot2)
 These two histograms show that customer have different preference on different category products.\
 We could find 'mountains and valleys' patterns in these two graphs, indicating being potential segements for later analysis. 
 
-# Methods {.tabset .tabset-fade .tabset-pills} 
+
 
 ## R
 
